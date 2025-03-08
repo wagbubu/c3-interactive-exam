@@ -7,6 +7,10 @@
   --color-moss-cork: #3d241b;
   --color-moss-orange: #ef8d68;
   --color-moss-springwood: #f2f0e6;
+  --color-moss-primary: #f7f7f7;
+  --color-moss-secondary: #f1f1f1;
+  --color-moss-tertiary: #e7e7e7;
+  --breakpoint-xs: 25rem;
 }
 @theme inline {
   --color-background: var(--background);

@@ -1,17 +1,16 @@
 import Image from "next/image";
-import heroThumbnail from "@/lib/assets/hero-thumbnail.png";
 import { ArrowUpRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <div className="px-4 bg-moss-cork/5 space-y-6 py-8">
+    <div className="px-4 bg-moss-secondary space-y-6 py-8">
       <div className="flex items-center content-center">
         {/*thumbnail and arrow*/}
-        <div className="relative w-16 h-16 rounded-full overflow-hidden shadow-md">
+        <div className="relative w-16 h-16 rounded-full overflow-hidden">
           <Image
             fill
             alt="guy with bonnet and green jacket"
-            src={heroThumbnail}
+            src="/images/hero-thumbnail.png"
           />
         </div>
         <div className="bg-moss-orange w-min rounded-full text-white p-4 relative right-2">

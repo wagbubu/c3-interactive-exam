@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} ${geistMono.variable} antialiased bg-moss-springwood`}
+        className={`${inter.className} ${geistMono.variable} antialiased bg-moss-primary`}
       >
         <Banner />
         <Navbar />
