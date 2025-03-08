@@ -3,7 +3,11 @@
 @plugin "tailwindcss-animate";
 
 @custom-variant dark (&:is(.dark *));
-
+@theme {
+  --color-moss-cork: #3d241b;
+  --color-moss-orange: #ef8d68;
+  --color-moss-springwood: #f2f0e6;
+}
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -121,6 +125,6 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply text-moss-cork;
   }
 }
