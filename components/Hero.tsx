@@ -26,7 +26,7 @@ export default function Hero() {
         </div>
       </div>
       <div>
-        <h1 className="upeprcase text-4xl">
+        <h1 className="upeprcase text-4xl tracking-tighter leading-12">
           DISCOVER EVERYTHING YOU NEED IN ONE PLACE
         </h1>
       </div>
