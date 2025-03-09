@@ -15,7 +15,7 @@ export default function ProductList() {
       opts={{
         align: "start",
       }}
-      className="w-full py-4 pl-4 bg-secondary border-t-2"
+      className="w-full pt-7 pb-10 pl-4 bg-secondary border-t-2 bg-moss-secondary"
     >
       <CarouselContent className="[&>div:last-of-type]:mr-4">
         {Array.from({ length: 10 }).map((_, index) => (

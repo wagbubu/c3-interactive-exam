@@ -15,13 +15,13 @@ export default function Navbar() {
         <DrawerTrigger asChild>
           <Button
             variant="ghost"
-            className="bg-moss-springwood bg-transparent hover:bg-transparent active:bg-transparent focus:bg-transparent"
+            className="bg-transparent hover:bg-transparent active:bg-transparent focus:bg-transparent"
           >
             <p className="uppercase">Menu</p>
             <Menu style={{ width: 24, height: 24 }} />
           </Button>
         </DrawerTrigger>
-        <DrawerContent className="px-3 bg-moss-springwood">
+        <DrawerContent className="px-3 bg-moss-primary">
           <DialogTitle className="font-bold">Menu</DialogTitle>
           <NavLinkList>
             <NavLinkItem>Discover</NavLinkItem>
