@@ -14,7 +14,7 @@ export type Variant = {
   image: string;
 };
 
-const productList: Product[] = [
+export const productList: Product[] = [
   {
     id: 1,
     title: "Meal Mates",
@@ -25,42 +25,42 @@ const productList: Product[] = [
   },
   {
     id: 2,
-    title: "Meal Mates",
-    image: "/images/meal-mates.png",
-    price: 29.0,
+    title: "Mocha Mate",
+    image: "/images/mocha_mate2.png",
+    price: 388.0,
     category: "Kitchen Gear",
     rating: 4.9,
   },
   {
     id: 3,
-    title: "Meal Mates",
-    image: "/images/meal-mates.png",
-    price: 29.0,
-    category: "Kitchen Gear",
+    title: "Barber Tool",
+    image: "/images/barber_tool.png",
+    price: 199.0,
+    category: "Self Care",
     rating: 4.9,
   },
   {
     id: 4,
-    title: "Meal Mates",
-    image: "/images/meal-mates.png",
-    price: 29.0,
+    title: "Hot Cup",
+    image: "/images/hot_cup.png",
+    price: 94.0,
     category: "Kitchen Gear",
     rating: 4.9,
   },
   {
     id: 5,
-    title: "Meal Mates",
-    image: "/images/meal-mates.png",
-    price: 29.0,
+    title: "Peugeot Paris Mill",
+    image: "/images/peugeot_paris_mill.png",
+    price: 26.99,
     category: "Kitchen Gear",
     rating: 4.9,
   },
   {
     id: 6,
-    title: "Meal Mates",
-    image: "/images/meal-mates.png",
-    price: 29.0,
-    category: "Kitchen Gear",
+    title: "Marcel The Shell",
+    image: "/images/marcel_the_shell.png",
+    price: 33.99,
+    category: "Home Decor",
     rating: 4.9,
   },
 ];

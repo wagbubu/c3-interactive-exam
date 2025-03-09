@@ -8,6 +8,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import ProductCard from "./ProductCard";
+import { productList } from "@/lib/mock";
 
 export default function ProductList() {
   return (
@@ -18,9 +19,9 @@ export default function ProductList() {
       className="w-full pt-7 pb-10 pl-4 bg-secondary border-t-2 bg-moss-secondary"
     >
       <CarouselContent className="[&>div:last-of-type]:mr-4">
-        {Array.from({ length: 10 }).map((_, index) => (
-          <CarouselItem key={index} className="basis-2/3 ">
-            <ProductCard />
+        {productList.map((item) => (
+          <CarouselItem key={item.id} className="basis-2/3 ">
+            <ProductCard title={item.title} image={item.image} />
           </CarouselItem>
         ))}
       </CarouselContent>

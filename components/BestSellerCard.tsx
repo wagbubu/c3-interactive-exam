@@ -27,7 +27,7 @@ export default function BestSellerCard({
   const [currentVariant, setCurrentVariant] = useState(variants![0]);
   return (
     <VariantContext.Provider value={{ currentVariant, setCurrentVariant }}>
-      <Card className="rounded-none bg-white border-none py-4 shadow-none">
+      <Card className="rounded-none bg-white border-none !py-0 shadow-none">
         <CardContent className="h-96 py-16">
           <div className="relative w-full h-full">
             <Image

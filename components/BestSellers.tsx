@@ -6,9 +6,11 @@ export default function BestSellers() {
   return (
     <div className="px-4">
       <h1 className="uppercase tracking-tighter text-3xl my-6">BestSellers</h1>
-      {sampleBestSeller.map((item) => (
-        <BestSellerCard key={item.id} {...item} />
-      ))}
+      <div className="pb-4">
+        {sampleBestSeller.map((item) => (
+          <BestSellerCard key={item.id} {...item} />
+        ))}
+      </div>
     </div>
   );
 }
