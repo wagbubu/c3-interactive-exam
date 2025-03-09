@@ -6,7 +6,7 @@ interface Props {
 
 export default function DesktopHero({ className }: Props) {
   return (
-    <div className={cn("bg-moss-secondary w-full", className)}>
+    <div className={cn("bg-moss-primary w-full", className)}>
       <div className="max-w-7xl m-auto px-8 pb-6 flex pt-20">
         <p className="block max-w-44 text-xs">
           Explore our curated range of products to elevate every part of your

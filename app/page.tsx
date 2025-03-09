@@ -1,13 +1,13 @@
 import BestSellers from "@/components/BestSellers";
 import Hero from "@/components/Hero";
-import ProductList from "@/components/ProductList";
+import ProductCarousel from "@/components/ProductCarousel";
 import Shop from "@/components/Shop";
 
 export default function Home() {
   return (
     <div>
       <Hero />
-      <ProductList />
+      <ProductCarousel className="lg:hidden" />
       <BestSellers />
       <Shop />
     </div>

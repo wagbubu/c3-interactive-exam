@@ -1,6 +1,6 @@
 import { ListFilter } from "lucide-react";
-import { Button } from "./ui/button";
 import SortButton from "./SortButton";
+import ProductList from "./ProductList";
 
 export default function Shop() {
   return (
@@ -18,7 +18,9 @@ export default function Shop() {
       </div>
       <div className="max-w-7xl px-8 grid grid-cols-4 gap-x-4 m-auto">
         <div className="k">test</div>
-        <div className="col-span-3"></div>
+        <div className="col-span-3">
+          <ProductList />
+        </div>
       </div>
     </div>
   );
