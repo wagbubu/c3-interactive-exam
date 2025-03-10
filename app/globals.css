@@ -4,6 +4,29 @@
 
 @custom-variant dark (&:is(.dark *));
 @theme {
+  --animate-accordion-down: accordion-down 0.3s ease-out;
+  --animate-accordion-up: accordion-up 0.3s ease-out;
+  @keyframes accordion-down {
+    0% {
+      height: 0;
+      opacity: 0;
+    }
+    100% {
+      height: var(--radix-accordion-content-height);
+      opacity: 1;
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+      opacity: 1;
+    }
+    to {
+      height: 0;
+      opacity: 0;
+    }
+  }
   --color-moss-cork: #3d241b;
   --color-moss-orange: #ef8d68;
   --color-moss-springwood: #f2f0e6;
