@@ -6,10 +6,11 @@ import Image from "next/image";
 import { Product } from "@/lib/mock";
 import { Button } from "./ui/button";
 import { useCart } from "./Cart";
+import { ProductType } from "@/lib/type";
 
 interface Props
-  extends Omit<Product, "category">,
-    Partial<Pick<Product, "category">> {}
+  extends Omit<ProductType, "category">,
+    Partial<Pick<ProductType, "category">> {}
 
 export default function ProductCard({
   title,
@@ -17,9 +18,8 @@ export default function ProductCard({
   category,
   price,
   id,
+  description,
   rating,
-  tag,
-  variants,
 }: Props) {
   const { dispatch } = useCart();
   return (
@@ -30,12 +30,12 @@ export default function ProductCard({
             <Image fill src={image} alt="lunch box" objectFit="contain" />
           </div>
         </CardContent>
-        <CardFooter className="px-2 text-md uppercase flex w-full justify-between">
-          <CardTitle className="font-medium">{title}</CardTitle>
+        <CardFooter className="gap-x-4 px-2 text-md uppercase flex w-full justify-between">
+          <CardTitle className="font-medium line-clamp-1">{title}</CardTitle>
           <ArrowUpRight className="font-medium" size={18} />
         </CardFooter>
       </Card>
-      <Card className="relative group cursor-pointer hidden lg:block rounded-none border-none py-0 shadow-none">
+      <Card className="relative group cursor-pointer hidden lg:block rounded-none border-none py-0 shadow-none max-h-80">
         <CardContent className="duration-300 ease-in-out group-hover:brightness-50 h-60 bg-moss-secondary">
           <div className="relative w-full h-full">
             <Image fill src={image} alt="lunch box" objectFit="contain" />
@@ -43,8 +43,8 @@ export default function ProductCard({
         </CardContent>
         <CardFooter className="flex flex-col items-start py-4 px-2 bg-moss-primary uppercase w-full text-moss-cork">
           <p className="text-xs mb-2">{category}</p>
-          <div className="flex justify-between items-center w-full">
-            <CardTitle className="font-medium">{title}</CardTitle>
+          <div className="flex justify-between items-center w-full gap-x-8">
+            <CardTitle className="font-medium line-clamp-2">{title}</CardTitle>
             <p className="font-semibold">£{price.toFixed(2)}</p>
           </div>
         </CardFooter>

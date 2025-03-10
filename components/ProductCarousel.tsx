@@ -1,21 +1,20 @@
 "use client";
-import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 import ProductCard from "./ProductCard";
-import { productList } from "@/lib/mock";
 import { cn } from "@/lib/utils";
+import { useProducts } from "@/lib/getProducts";
+import { ProductType } from "@/lib/type";
 
 interface Props {
   className?: string;
 }
 
 export default function ProductCarousel({ className }: Props) {
+  const products = useProducts();
   return (
     <Carousel
       opts={{
@@ -27,7 +26,7 @@ export default function ProductCarousel({ className }: Props) {
       )}
     >
       <CarouselContent className="[&>div:last-of-type]:mr-4">
-        {productList.map((item) => (
+        {products.data?.map((item: ProductType) => (
           <CarouselItem key={item.id} className="basis-2/3 ">
             <ProductCard {...item} />
           </CarouselItem>

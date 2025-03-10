@@ -1,11 +1,12 @@
 "use client";
 
-import type { Metadata } from "next";
 import { Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Banner from "@/components/Banner";
 import Navbar from "@/components/Navbar";
 import { CartProvider } from "@/components/Cart";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+const queryClient = new QueryClient();
 
 const inter = Inter({
   variable: "--font-inter-sans",
@@ -27,11 +28,13 @@ export default function RootLayout({
       <body
         className={`${inter.className} ${geistMono.variable} antialiased bg-moss-primary`}
       >
-        <CartProvider>
-          <Banner />
-          <Navbar />
-          {children}
-        </CartProvider>
+        <QueryClientProvider client={queryClient}>
+          <CartProvider>
+            <Banner />
+            <Navbar />
+            {children}
+          </CartProvider>
+        </QueryClientProvider>
       </body>
     </html>
   );

@@ -1,12 +1,17 @@
+"use client";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Button } from "./ui/button";
+import { useState } from "react";
 
 export default function Filter() {
+  const [category, setCategory] = useState("");
   return (
     <div>
       <Accordion type="single" collapsible className="w-full mt-4 border-b">
@@ -15,7 +20,42 @@ export default function Filter() {
             Category
           </AccordionTrigger>
           <AccordionContent>
-            Yes. It adheres to the WAI-ARIA design pattern.
+            <RadioGroup
+              value={category}
+              onValueChange={(value) => setCategory(value)}
+            >
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="electronics" id="r1" />
+                <Label className="cursor-pointer" htmlFor="r1">
+                  Electronics
+                </Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="jewelry" id="r2" />
+                <Label className="cursor-pointer" htmlFor="r2">
+                  Jewelry
+                </Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="men's%20clothing" id="r3" />
+                <Label className="cursor-pointer" htmlFor="r3">
+                  Men's Clothing
+                </Label>
+              </div>
+              <div className="flex items-center space-x-2 ">
+                <RadioGroupItem value="women's%20clothing" id="r4" />
+                <Label className="cursor-pointer" htmlFor="r4">
+                  Women's Clothing
+                </Label>
+              </div>
+            </RadioGroup>
+            <Button
+              onClick={() => setCategory("")}
+              variant="link"
+              className="uppercase text-moss-cork mt-4 cursor-pointer"
+            >
+              Reset
+            </Button>
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-2">

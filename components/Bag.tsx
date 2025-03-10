@@ -67,7 +67,7 @@ export default function Bag() {
               </div>
               <div className="flex justify-between w-full px-4 items-center">
                 <div>
-                  <p className="uppercase">{item.title}</p>
+                  <p className="uppercase line-clamp-2">{item.title}</p>
                   <p className="uppercase text-xs">
                     Quantity: <span>{item.quantity}</span>
                   </p>
