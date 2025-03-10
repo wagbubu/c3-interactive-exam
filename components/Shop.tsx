@@ -12,7 +12,7 @@ export default function Shop() {
   const products = useProducts(category);
 
   return (
-    <div className="w-full">
+    <div className="w-full hidden lg:block">
       <div className="max-w-7xl m-auto px-8">
         <div className="grid grid-cols-4 justify-between uppercase py-1 border-b-2 gap-x-4">
           <div className="flex justify-between col-span-1 items-center">
