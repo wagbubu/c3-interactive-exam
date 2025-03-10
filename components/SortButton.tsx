@@ -25,7 +25,7 @@ export default function SortButton({ className }: Props) {
 
   return (
     <div className={cn(className)}>
-      <DropdownMenu>
+      <DropdownMenu modal={false}>
         <DropdownMenuTrigger asChild>
           <Button
             className="cursor-pointer group uppercase focus-visible:ring-0 hover:font-semibold hover:bg-transparent hover:text-moss-cork data-[state=open]:font-semibold data-[state=open]:[&>svg]:rotate-180"

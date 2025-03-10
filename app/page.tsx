@@ -1,3 +1,5 @@
+"use client";
+
 import BestSellers from "@/components/BestSellers";
 import Hero from "@/components/Hero";
 import ProductCarousel from "@/components/ProductCarousel";

@@ -5,9 +5,10 @@ import { Card, CardContent, CardFooter, CardTitle } from "./ui/card";
 import Image from "next/image";
 import { Product } from "@/lib/mock";
 import { Button } from "./ui/button";
+import { useCart } from "./Cart";
 
 interface Props
-  extends Omit<Product, "id" | "category">,
+  extends Omit<Product, "category">,
     Partial<Pick<Product, "category">> {}
 
 export default function ProductCard({
@@ -15,10 +16,12 @@ export default function ProductCard({
   image,
   category,
   price,
+  id,
   rating,
   tag,
   variants,
 }: Props) {
+  const { dispatch } = useCart();
   return (
     <>
       <Card className="lg:hidden rounded-none bg-moss-tertiary py-2 shadow-none">
@@ -38,14 +41,22 @@ export default function ProductCard({
             <Image fill src={image} alt="lunch box" objectFit="contain" />
           </div>
         </CardContent>
-        <CardFooter className="flex flex-col items-start py-4 px-2 bg-moss-primary uppercase w-full">
+        <CardFooter className="flex flex-col items-start py-4 px-2 bg-moss-primary uppercase w-full text-moss-cork">
           <p className="text-xs mb-2">{category}</p>
           <div className="flex justify-between items-center w-full">
             <CardTitle className="font-medium">{title}</CardTitle>
             <p className="font-semibold">£{price.toFixed(2)}</p>
           </div>
         </CardFooter>
-        <Button className="hover:bg-moss-cork cursor-pointer bg-moss-orange uppercase text-moss-springwood rounded-none absolute bottom-1/3 right-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+        <Button
+          onClick={() =>
+            dispatch({
+              type: "ADD_ITEM",
+              payload: { id, title, image, price, quantity: 1 },
+            })
+          }
+          className="hover:bg-moss-cork cursor-pointer bg-moss-orange uppercase text-moss-springwood rounded-none absolute bottom-1/3 right-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"
+        >
           Add to cart
         </Button>
       </Card>
