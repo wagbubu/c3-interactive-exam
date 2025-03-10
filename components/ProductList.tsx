@@ -1,15 +1,17 @@
 "use client";
-import { Product, productList } from "@/lib/mock";
 import ProductCard from "./ProductCard";
 import { useProducts } from "@/lib/getProducts";
 import { ProductType } from "@/lib/type";
 
-export default function ProductList() {
-  const products = useProducts();
+interface Props {
+  category: string;
+  products: ProductType[];
+}
 
+export default function ProductList({ category, products }: Props) {
   return (
     <div className="grid grid-cols-3 gap-4 py-4">
-      {products.data?.map((product: ProductType) => (
+      {products?.map((product: ProductType) => (
         <ProductCard key={product.id} {...product} />
       ))}
     </div>

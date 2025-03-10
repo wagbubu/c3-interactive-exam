@@ -53,29 +53,7 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [state, dispatch] = useReducer(cartReducer, {
-    items: [
-      {
-        id: 1,
-        title: "Meal Mates",
-        image: "/images/meal-mates.png",
-        price: 29.0,
-        quantity: 1,
-      },
-      {
-        id: 2,
-        title: "Mocha Mate",
-        image: "/images/mocha_mate2.png",
-        price: 388.0,
-        quantity: 1,
-      },
-      {
-        id: 3,
-        title: "Barber Tool",
-        image: "/images/barber_tool.png",
-        price: 199.0,
-        quantity: 1,
-      },
-    ],
+    items: [],
   });
 
   return (

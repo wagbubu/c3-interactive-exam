@@ -1,9 +1,16 @@
+"use client";
+
 import { ListFilter } from "lucide-react";
 import SortButton from "./SortButton";
 import ProductList from "./ProductList";
 import Filter from "./Filter";
+import { useState } from "react";
+import { useProducts } from "@/lib/getProducts";
 
 export default function Shop() {
+  const [category, setCategory] = useState("");
+  const products = useProducts(category);
+
   return (
     <div className="w-full">
       <div className="max-w-7xl m-auto px-8">
@@ -19,10 +26,10 @@ export default function Shop() {
       </div>
       <div className="max-w-7xl px-8 grid grid-cols-4 gap-x-4 m-auto">
         <div className="col-span-1 border-r px-4">
-          <Filter />
+          <Filter category={category} setCategory={setCategory} />
         </div>
         <div className="col-span-3">
-          <ProductList />
+          <ProductList products={products.data} category={category} />
         </div>
       </div>
     </div>

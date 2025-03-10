@@ -8,10 +8,12 @@ import {
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Button } from "./ui/button";
-import { useState } from "react";
 
-export default function Filter() {
-  const [category, setCategory] = useState("");
+interface Props {
+  category: string;
+  setCategory: (s: string) => void;
+}
+export default function Filter({ category, setCategory }: Props) {
   return (
     <div>
       <Accordion type="single" collapsible className="w-full mt-4 border-b">
@@ -31,9 +33,9 @@ export default function Filter() {
                 </Label>
               </div>
               <div className="flex items-center space-x-2">
-                <RadioGroupItem value="jewelry" id="r2" />
+                <RadioGroupItem value="jewelery" id="r2" />
                 <Label className="cursor-pointer" htmlFor="r2">
-                  Jewelry
+                  Jewelery
                 </Label>
               </div>
               <div className="flex items-center space-x-2">

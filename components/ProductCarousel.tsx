@@ -14,7 +14,7 @@ interface Props {
 }
 
 export default function ProductCarousel({ className }: Props) {
-  const products = useProducts();
+  const products = useProducts("");
   return (
     <Carousel
       opts={{
